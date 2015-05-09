@@ -1,5 +1,6 @@
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
+# test test
 
 # setup promt header
 PS1="\[\033[01;31m\]\u\[\033[0;37m\]@\[\033[01;31m\]\h\[\033[00m\]:\[\033[01;35m\]\W\[\033[00m\]\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtcyn\]\$\[$txtwht\] "
@@ -27,14 +28,20 @@ alias grao='git remote add origin'
 alias gch='git checkout'
 alias gl='git log'
 
-#use brew vim
+# nacnud script aliases
+#alias inp='~/.bash/nacnud/bin/initnodeproj.sh'
+
 alias vim='/usr/local/bin/vim'
 export EDITOR='/usr/local/bin/vim'
+
+# setup global variabls for ssh servers
+export slug="104.131.146.51"
+
+export PYTHONSTARTUP=$HOME/.pythonstartup
 
 # why would you ever not work inside of tmux
 tmux -2
 
-#set paths
 export NODE_PATH=/Users/drwizzard/.node/lib/node_modules
 export PATH=/Users/drwizzard/.node/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/drwizzard/.bash/nacnud/bin/
   
