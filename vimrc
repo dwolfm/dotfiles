@@ -69,11 +69,11 @@ set laststatus=2          " allways show the status line
 set cursorline            " allways show a line where the curser is
 colorscheme jellybeans    " set the color scheme
 
-"Key Bindings
-imap ii <Esc>        "set doble tat i key to equal escape
+" Key Bindings
+imap ii <Esc>        " set doble tat i key to equal escape
 let mapleader = "\<Space>" " leader = spaecbar
 
-"change hop to beging and end of line
+" change hop to beging and end of line
 noremap H ^
 noremap L $
 
@@ -87,11 +87,11 @@ map <leader>l <C-W>l
 noremap <leader>wc :!wc -w %<CR>
 " syntastic cheack
 nnoremap <silent> <leader>s :SyntasticCheck<CR>
-"open nerdtree
+" open nerdtree
 nnoremap <silent> <leader>t :TlistToggle<CR>
-"open gundo
+" open gundo
 nnoremap <silent> <leader>u :GundoToggle<CR>
-"open ctl-p
+" open ctl-p
 nnoremap <silent> <leader>p :CtrlP<CR>
 
 " Vim-Airline
@@ -100,7 +100,7 @@ let g:airline_powerline_fonts = 1           " Use powerline fonts for
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 
-"vim moce setup
+" vim moce setup
 let g:move_key_modifier = 'C'
 
 " Snipmate
@@ -117,13 +117,13 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
 let g:syntastic_auto_loc_list = 1
 
-"Utilisnips
+" Utilisnips
 let g:UltiSnipsExpandTrigger="<tab>"        " Trigger snippets with TAB
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsEditSplit=" vertical"
 
-if has('mouse')		   "if there is a mouse avalible allow it
+if has('mouse')		   " if there is a mouse avalible allow it
   set mouse=a
 endif
 
