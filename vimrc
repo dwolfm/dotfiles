@@ -53,21 +53,21 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " general conf
-set backspace=2 	" make backspace work like all other apps
-set number           "turn on the line numbers
-set incsearch  		   " vim starts searching while typing search string
-set tabstop=3		     " tabset three spaces
-set shiftwidth=3		" tabset three space
-set ff=mac " set file format to mac
-syntax enable				 " syntax always on
-set wildmenu 	" enable tab completion
+set backspace=2           " make backspace work like all other apps
+set number                " turn on the line numbers
+set incsearch             " vim starts searching while typing search string
+set tabstop=3             " tabset three spaces
+set shiftwidth=3          " tabset three space
+set ff=mac                " set file format to mac
+syntax enable             " syntax always on
+set wildmenu              " enable tab completion
 set wildmode=list:longest " configure tab completion
-set t_Co=256	" set termcolors to 256
-set encoding=utf8 	" set standared encoding as utf8
-set ruler	" allways show the current position
-set laststatus=2 " allways show the status line
-set cursorline		"allways show a line where the curser is
-colorscheme jellybeans " set the color scheme
+set t_Co=256              " set termcolors to 256
+set encoding=utf8         " set standared encoding as utf8
+set ruler                 " allways show the current position
+set laststatus=2          " allways show the status line
+set cursorline            " allways show a line where the curser is
+colorscheme jellybeans    " set the color scheme
 
 "Key Bindings
 imap ii <Esc>        "set doble tat i key to equal escape
