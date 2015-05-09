@@ -9,7 +9,7 @@ gather:
 	cp -rf ${HOME}/.bash $(DOTFILES)/bash
 
 plant:
-	rm -rf $(DOTFILES)/*
+	rm -rf $(DOTFILES)/bak/*
 	cp -f ${HOME}/.bashrc $(DOTFILES)/bak/bashrc.bak
 	cp -f ${HOME}/.vimrc $(DOTFILES)/bak/vimrc.bak
 	cp -f ${HOME}/.gitconfig $(DOTFILES)/bak/gitconfig.bak

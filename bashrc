@@ -1,5 +1,6 @@
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
+# test test
 
 # setup promt header
 PS1="\[\033[01;31m\]\u\[\033[0;37m\]@\[\033[01;31m\]\h\[\033[00m\]:\[\033[01;35m\]\W\[\033[00m\]\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtcyn\]\$\[$txtwht\] "
