@@ -1,7 +1,6 @@
+" setup vundle
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
-" setup vundle
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -17,7 +16,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'flazz/vim-colorschemes'
 Plugin 'airblade/vim-gitgutter'  
 Plugin 'bling/vim-airline'  
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} "fonts for airline
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} 
 
 " y not type less
 Plugin 'SirVer/ultisnips'
@@ -59,7 +58,7 @@ set number           "turn on the line numbers
 set incsearch  		   " vim starts searching while typing search string
 set tabstop=3		     " tabset three spaces
 set shiftwidth=3		" tabset three space
-set ff=mac,unix 			     " set file format to mac
+set ff=mac " set file format to mac
 syntax enable				 " syntax always on
 set wildmenu 	" enable tab completion
 set wildmode=list:longest " configure tab completion
