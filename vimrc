@@ -70,7 +70,8 @@ set cursorline            " allways show a line where the curser is
 colorscheme jellybeans    " set the color scheme
 
 " Key Bindings
-imap ii <Esc>        " set doble tat i key to equal escape
+" set doble tat i key to equal escape
+imap ii <Esc>
 let mapleader = "\<Space>" " leader = spaecbar
 
 " change hop to beging and end of line
