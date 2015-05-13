@@ -1,3 +1,4 @@
+" test
 " setup vundle
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -68,12 +69,19 @@ set ruler                 " allways show the current position
 set laststatus=2          " allways show the status line
 set cursorline            " allways show a line where the curser is
 colorscheme jellybeans    " set the color scheme
+set undodir=~/.vim/undoHist
+set undofile
+
+function Qsesh()
+	:mksession! Session.vim
+	:wqall
+endfunction
 
 " Key Bindings
 " set doble tat i key to equal escape
 imap ii <Esc>
 let mapleader = "\<Space>" " leader = spaecbar
-
+map ZZ :exec Qsesh()<CR>
 " change hop to beging and end of line
 noremap H ^
 noremap L $

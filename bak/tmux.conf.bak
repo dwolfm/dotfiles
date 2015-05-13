@@ -4,21 +4,30 @@
 unbind C-b
 set -g prefix C-f
 
-set -g mode-mouse on
-
+# remap rotate window to <C-f> i
 unbind C-o
-unbind l
 unbind i
-#bind-key % split-window -h
+bind-key i rotate-window
+
+#bind-key % to hotdog split window
 bind % split-window -h -c "#{pane_current_path}"
+
+#bind-key " to hamberger split window
 bind '"' split-window -v -c "#{pane_current_path}"
 
-bind-key i rotate-window
+#bind o previos pane p next pane
+bind-key          p select-pane -t :.+
+bind-key          o select-pane -t :.-
+
+
+# map vim nav keys to switch panes
+unbind l
 bind-key h select-pane -L 
 bind-key l select-pane -R 
 bind-key k select-pane -U
 bind-key j select-pane -D
 
+# map vim nav keys CAPS to resize panes
 bind-key H resize-pane -L 10
 bind-key L resize-pane -R 10
 bind-key K resize-pane -U 10
@@ -28,6 +37,10 @@ bind-key J resize-pane -D 10
 set-option -g status-bg colour30
 set-option -g status-fg colour0
 
+# set mouse mode on by default
+set -g mode-mouse on
+
+# bind <C-f> m turn mouse mode on 
 bind m \
 	set -g mode-mouse on \;\
 	set -g mouse-resize-pane on \;\
@@ -35,6 +48,7 @@ bind m \
 	set -g mouse-select-window on \;\
 	display 'Mouse: ON'
 
+# bind <C-f> M turn mouse mode off
 bind M \
 	set -g mode-mouse off \;\
 	set -g mouse-resize-pane off \;\
@@ -42,5 +56,8 @@ bind M \
 	set -g mouse-select-window off \;\
 	display 'Mouse: OFF'
 
-# reattach commands run to user-namespace so that LSOpenUrl will not barf
+# make tmux copy paste to system clipboard requires(brew install reattach-to-user-namespace)
 set-option -g default-command "which reattach-to-user-namespace > /dev/null && reattach-to-user-namespace -l $SHELL || $SHELL"
+bind v run-shell "reattach-to-user-namespace -l zsh -c 'tmux set-buffer 		"$(pbpaste)"; tmux paste-buffer'"
+bind y run-shell "reattach-to-user-namespace -l zsh -c 'tmux show-buffer | pbcopy'"
+
