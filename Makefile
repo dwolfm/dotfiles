@@ -16,7 +16,8 @@ plant:
 	cp -f ${HOME}/.gitconfig $(DOTFILES)/bak/gitconfig.bak
 	cp -f ${HOME}/.tmux.conf $(DOTFILES)/bak/tmux.conf.bak
 	cp -f ${HOME}/.tern-project $(DOTFILES)/bak/tern-project.bak
-	cp -rf ${HOME}/.bash $(DOTFILES)/bak/bash.bak
+	rm -rf $(DOTFILES)/bak/bash.bak/*
+	cp -rf ${HOME}/.bash/* $(DOTFILES)/bak/bash.bak/
 	cp -rf $(HOME)/.psqlrc $(DOTFILES)/bak/psqlrc
 	cp -f $(DOTFILES)/bashrc ${HOME}/.bashrc 
 	cp -f $(DOTFILES)/vimrc ${HOME}/.vimrc 
