@@ -30,6 +30,7 @@ alias pgdown="killall -6 postgres"
 alias ddatadump="rm -rf $HOME/Library/Developer/Xcode/DerivedData/*"
 
 # usefull navigation and location aliases
+alias pcd='pushd $PWD && cd'
 alias ..='cd ..'
 alias ls='ls -G'
 alias ll='ls -lahG'
