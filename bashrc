@@ -52,8 +52,8 @@ export DOTFILES="$GITZ/dotfiles"
 
 # usefull git aliases
 alias gc='git commit -a -m'
-alias gpush='git push origin master'
-alias gpull='git pull origin master'
+alias gpush='git push origin'
+alias gpull='git pull origin'
 alias gs='git status'
 alias ga='git add -A'
 alias grao='git remote add origin'
