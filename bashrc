@@ -22,8 +22,8 @@ alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather &
 alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
 
 # env var
-export gitz="$HOME/Documents/gitz"
-
+export GITZ="$HOME/Documents/gitz"
+export DOTFILES="$gitz/dotfiles"
 
 # usefull git aliases
 alias gc='git commit -a -m'
