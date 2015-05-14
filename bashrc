@@ -15,9 +15,17 @@ alias ll='ls -lahG'
 alias la='ls -aG'
 alias l='ls -1G'
 
+# jump to dir
+alias gitz="cd $HOME/Documents/gitz"
+alias ddata="cd $HOME/Library/Developer/Xcode/DerivedData"
+alias dotgather="cd $HOME/Documents/gitz/dotfiles && make gather && git commit -a -m 'update' && git push origin master && popd"
+alias dotplant="cd $HOME/Documents/gitz/dotfiles && make plant && popd"
+
+# env var
+export gitz="$HOME/Documents/gitz"
+
+
 # usefull git aliases
-alias gitz='cd ~/Documents/gitz'
-alias ddata='cd /Users/$USER/Library/Developer/Xcode/DerivedData'
 alias gc='git commit -a -m'
 alias gpush='git push origin master'
 alias gpull='git pull origin master'
@@ -34,7 +42,7 @@ export EDITOR='/usr/local/bin/vim'
 # why would you ever not work inside of tmux
 tmux -2
 
-#set paths
+# set paths
 export NODE_PATH=/Users/drwizzard/.node/lib/node_modules
 export PATH=/Users/drwizzard/.node/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/drwizzard/.bash/nacnud/bin/
   

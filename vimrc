@@ -113,8 +113,8 @@ let g:airline#extensions#branch#enabled = 1
 let g:move_key_modifier = 'C'
 
 " Snipmate
-imap \ <esc>a<Plug>snipMateNextOrTrigger
-smap \ <Plug>snipMateNextOrTrigger
+nnoremap <silent> <leader>\ <esc>a<Plug>snipMateNextOrTrigger
+smap <silent> <leader>\ <Plug>snipMateNextOrTrigger
 
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive',     
