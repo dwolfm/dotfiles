@@ -16,13 +16,14 @@ setVolume(){
 	else
 		VOL=$1
 	fi
-	sudo osascript -e "set Volume $VOL"
+	sudo osascript -e "set volume output volume $VOL"
 	echo "volume: $VOL"
 }
 alias v=setVolume
-alias vu='VOL=`expr $VOL + 1` && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
-alias vd='VOL=`expr $VOL - 1` && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
+alias vu='VOL=`expr $VOL + 10` && sudo osascript -e "set volume output volume $VOL" && echo "volume: $VOL"'
+alias vd='VOL=`expr $VOL - 10` && sudo osascript -e "set volume output volume $VOL" && echo "volume: $VOL"'
 alias vm='VOL=7 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
+alias vs='echo "volume: $VOL"'
 
 # dotfiles
 alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A && git commit -a -m 'nother update' && git push origin master && popd"
