@@ -6,7 +6,7 @@ gather:
 	cp -f ${HOME}/.gitconfig $(DOTFILES)/gitconfig
 	cp -f ${HOME}/.tmux.conf $(DOTFILES)/tmux.conf
 	cp -f ${HOME}/.tern-project $(DOTFILES)/tern-project
-	cp -rf ${HOME}/.bash $(DOTFILES)/bash
+	cp -rf ${HOME}/.bash/* $(DOTFILES)/bash/
 	cp -rf $(HOME)/.psqlrc $(DOTFILES)/psqlrc
 
 plant:
@@ -23,6 +23,6 @@ plant:
 	cp -f $(DOTFILES)/gitconfig ${HOME}/.gitconfig 
 	cp -f $(DOTFILES)/tmux.conf ${HOME}/.tmux.conf 
 	cp -f $(DOTFILES)/tern-project ${HOME}/.tern-project 
-	cp -rf $(DOTFILES)/bash ${HOME}/.bash 
+	cp -rf $(DOTFILES)/bash/* ${HOME}/.bash/ 
 	cp -r $(DOTFILES)/psqlrc $(HOME)/.psqlrc
 
