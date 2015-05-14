@@ -18,8 +18,8 @@ alias l='ls -1G'
 # jump to dir
 alias gitz="cd $HOME/Documents/gitz"
 alias ddata="cd $HOME/Library/Developer/Xcode/DerivedData"
-alias dotgather="cd $HOME/Documents/gitz/dotfiles && make gather && git commit -a -m 'update' && git push origin master && popd"
-alias dotplant="cd $HOME/Documents/gitz/dotfiles && make plant && popd"
+alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A && git commit -a -m 'nother update' && git push origin master && popd"
+alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
 
 # env var
 export gitz="$HOME/Documents/gitz"
