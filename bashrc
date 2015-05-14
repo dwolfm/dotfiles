@@ -8,6 +8,27 @@ PS1="\[\033[01;31m\]\u\[\033[0;37m\]@\[\033[01;31m\]\h\[\033[00m\]:\[\033[01;35m
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
+#volume
+export VOL=0
+setVolume(){
+	if [ $# -eq 0 ]; then
+		VOL=0
+	else
+		VOL=$1
+	fi
+	sudo osascript -e "set Volume $VOL"
+	echo "volume: $VOL"
+}
+alias v=setVolume
+alias vu='VOL=`expr $VOL + 1` && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
+alias vd='VOL=`expr $VOL - 1` && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
+alias vm='VOL=7 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
+
+#dev
+alias pgup="postgres -D $HOME/.postgres"
+alias pgdown="killall -6 postgres"
+alias ddatadump="rm -rf $HOME/Library/Developer/Xcode/DerivedData/*"
+
 # usefull navigation and location aliases
 alias ..='cd ..'
 alias ls='ls -G'
@@ -23,7 +44,7 @@ alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && 
 
 # env var
 export GITZ="$HOME/Documents/gitz"
-export DOTFILES="$gitz/dotfiles"
+export DOTFILES="$GITZ/dotfiles"
 
 # usefull git aliases
 alias gc='git commit -a -m'
