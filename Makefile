@@ -17,6 +17,7 @@ plant:
 	cp -f ${HOME}/.tmux.conf $(DOTFILES)/bak/tmux.conf.bak
 	cp -f ${HOME}/.tern-project $(DOTFILES)/bak/tern-project.bak
 	rm -rf $(DOTFILES)/bak/bash.bak/*
+	mkdir $(DOTFILES)/bak/bash.bak
 	cp -rf ${HOME}/.bash/* $(DOTFILES)/bak/bash.bak/
 	cp -rf $(HOME)/.psqlrc $(DOTFILES)/bak/psqlrc
 	cp -f $(DOTFILES)/bashrc ${HOME}/.bashrc 

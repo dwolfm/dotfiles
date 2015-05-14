@@ -1,0 +1,5 @@
+\set PROMPT1 '%001%[%033[1;33;40m%]%002%n@%/%R%001%[%033[0m%]%002%# '
+\set PROMPT2 '%001%[%033[1;34;40m%]%002%n@%/%R%001%[%033[0m%]%002%# '
+\pset border 2
+\pset linestyle unicode
+\timing
