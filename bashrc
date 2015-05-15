@@ -9,10 +9,11 @@ export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 # volume
-export VOL=0
+export VOL=`sudo osascript -e "output volume of (get volume settings)"`
+
 setVolume(){
 	if [ $# -eq 0 ]; then
-		VOL=0
+		VOL=`sudo osascript -e "output volume of (get volume settings)"`
 	else
 		VOL=$1
 	fi
@@ -31,8 +32,11 @@ alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && 
 
 # dev
 alias pgup="postgres -D $HOME/.postgres"
-alias pgdown="killall -6 postgres"
+alias pgdown="killall postgres"
 alias ddatadump="rm -rf $HOME/Library/Developer/Xcode/DerivedData/*"
+alias vis="vim -S Session.vim"
+alias rbrc="source $HOME/.bashrc"
+alias rtrc="tmux source-file $HOME/.tmux.conf"
 
 # usefull navigation and location aliases
 alias pcd='pushd $PWD && cd'
