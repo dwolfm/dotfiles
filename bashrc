@@ -54,15 +54,19 @@ alias ddata="cd $HOME/Library/Developer/Xcode/DerivedData"
 export GITZ="$HOME/Documents/gitz"
 export DOTFILES="$GITZ/dotfiles"
 
+export GBRANCH=`echo "$git_branch" | cut -d "(" -f2 | cut -d ")" -f1`
 # usefull git aliases
 alias gc='git commit -a -m'
 alias gpush='git push origin'
 alias gpull='git pull origin'
+alias gbpush='gpush $GBRANCH'
+alias gbpull='gpull $GBRANCH'
 alias gs='git status'
 alias ga='git add -A'
 alias grao='git remote add origin'
-alias gch='git checkout'
-alias gl='git log'
+alias gbranch='git branch'
+alias gcheck='git checkout'
+alias gmerge='git merge'
 
 #use brew vim
 alias vim='/usr/local/bin/vim'
