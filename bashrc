@@ -29,21 +29,24 @@ alias vs='echo "volume: $VOL"'
 
 # dotfiles
 cmess(){  
-	export cmessage=`echo "changed files $(gs -s |cut -d ' ' -f 3 | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
-	echo $txtgrn "$cmessage"
-}
-dotgather(){
-	export cmessage=`echo "changed files $(gs -s |cut -d ' ' -f 3 | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
-	echo $txtgrn "$cmessage"
-	pushd $PWD
+	pushd $pwd
 	cd "$HOME/gitz/dotfiles"
-	make gather
-	git add -A
-	git commit -a -m "$cmessage"
-	git push origin master
+	export cmessage=`echo "changed files $(gs -s |cut -d ' ' -f 3 | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
+	echo $txtgrn "$cmessage"
 	popd
 }
-#alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && cmess && git commit -a -m "\"$cmessage\""  && git push origin master && popd"
+#dotgather(){
+	#export cmessage=`echo "changed files $(gs -s |cut -d ' ' -f 3 | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
+	#echo $txtgrn "$cmessage"
+	#pushd $PWD
+	#cd "$HOME/gitz/dotfiles"
+	#make gather
+	#git add -A
+	#git commit -a -m "$cmessage"
+	#git push origin master
+	#popd
+#}
+alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && cmess && git commit -a -m "\"$cmessage\""  && git push origin master && popd"
 
 alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
 
