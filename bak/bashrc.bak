@@ -1,3 +1,4 @@
+#testing cmess
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
 
@@ -9,29 +10,37 @@ export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 # volume
-export VOL=0
+export VOL=`sudo osascript -e "output volume of (get volume settings)"`
+
 setVolume(){
 	if [ $# -eq 0 ]; then
-		VOL=0
+		VOL=`sudo osascript -e "output volume of (get volume settings)"`
 	else
 		VOL=$1
 	fi
-	sudo osascript -e "set Volume $VOL"
+	sudo osascript -e "set volume output volume $VOL"
 	echo "volume: $VOL"
 }
 alias v=setVolume
-alias vu='VOL=`expr $VOL + 1` && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
-alias vd='VOL=`expr $VOL - 1` && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
+alias vu='VOL=`expr $VOL + 10` && sudo osascript -e "set volume output volume $VOL" && echo "volume: $VOL"'
+alias vd='VOL=`expr $VOL - 10` && sudo osascript -e "set volume output volume $VOL" && echo "volume: $VOL"'
 alias vm='VOL=7 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
+alias vs='echo "volume: $VOL"'
 
 # dotfiles
-alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A && git commit -a -m 'nother update' && git push origin master && popd"
+cmess(){  
+	export cmessage=`echo "changed files $(gs -s |cut -d ' ' -f 3 | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
+}
+alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && cmess && git commit -a -m $(echo "\"$cmessage\"")  && git push origin master && popd"
 alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
 
 # dev
 alias pgup="postgres -D $HOME/.postgres"
-alias pgdown="killall -6 postgres"
+alias pgdown="killall postgres"
 alias ddatadump="rm -rf $HOME/Library/Developer/Xcode/DerivedData/*"
+alias vis="vim -S Session.vim"
+alias rbrc="source $HOME/.bashrc"
+alias rtrc="tmux source-file $HOME/.tmux.conf"
 
 # usefull navigation and location aliases
 alias pcd='pushd $PWD && cd'
@@ -40,6 +49,8 @@ alias ls='ls -G'
 alias ll='ls -lahG'
 alias la='ls -aG'
 alias l='ls -1G'
+alias pmkdir='mkdir -p'
+
 
 # jump to dir
 alias gitz="cd $HOME/Documents/gitz"
@@ -49,15 +60,21 @@ alias ddata="cd $HOME/Library/Developer/Xcode/DerivedData"
 export GITZ="$HOME/Documents/gitz"
 export DOTFILES="$GITZ/dotfiles"
 
+export GBRANCH=`echo "$git_branch" | cut -d "(" -f2 | cut -d ")" -f1`
 # usefull git aliases
 alias gc='git commit -a -m'
-alias gpush='git push origin master'
-alias gpull='git pull origin master'
+alias gpush='git push origin'
+alias gpull='git pull origin'
+alias gbpush='gpush $GBRANCH'
+alias gbpull='gpull $GBRANCH'
 alias gs='git status'
 alias ga='git add -A'
 alias grao='git remote add origin'
-alias gch='git checkout'
-alias gl='git log'
+alias gbranch='git branch'
+alias gcheck='git checkout'
+alias gmerge='git merge'
+alias glog='git log'
+alias greset='git reset'
 
 #use brew vim
 alias vim='/usr/local/bin/vim'

@@ -30,4 +30,4 @@ plant:
 	cp -f $(DOTFILES)/tern-project ${HOME}/.tern-project 
 	cp -rf $(DOTFILES)/bash/* ${HOME}/.bash/ 
 	cp -r $(DOTFILES)/psqlrc $(HOME)/.psqlrc
-	cp -rf $(DOTFILES)/preferences/ $(HOME)/Libryary/Preferences/com.googlecode.iterm2.plist 
+	cp -rf $(DOTFILES)/preferences/* $(HOME)/Library/Preferences/ 

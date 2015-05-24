@@ -57,8 +57,8 @@ filetype plugin indent on    " required
 set backspace=2           " make backspace work like all other apps
 set number                " turn on the line numbers
 set incsearch             " vim starts searching while typing search string
-set tabstop=3             " tabset three spaces
-set shiftwidth=3          " tabset three space
+set tabstop=2             " tabset three spaces
+set shiftwidth=2          " tabset three space
 set ff=mac                " set file format to mac
 syntax enable             " syntax always on
 set wildmenu              " enable tab completion
