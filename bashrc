@@ -31,7 +31,7 @@ alias vs='echo "volume: $VOL"'
 cmess(){  
 	export cmessage=`echo "changed files $(gs -s |cut -d ' ' -f 3 | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
 }
-alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && cmess && git commit -a -m "$cmessage"  && git push origin master && popd"
+alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && cmess && git commit -a -m $(echo "\"$cmessage\"")  && git push origin master && popd"
 alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
 
 # dev
