@@ -1,3 +1,4 @@
+#testing cmess
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
 
@@ -27,7 +28,10 @@ alias vm='VOL=7 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
 alias vs='echo "volume: $VOL"'
 
 # dotfiles
-alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A && git commit -a -m 'nother update' && git push origin master && popd"
+cmess(){  
+	export cmessage=`echo "changed files $(gs -s |cut -d ' ' -f 3 | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
+}
+alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && cmess && git commit -a -m "$cmessage"  && git push origin master && popd"
 alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
 
 # dev
@@ -45,6 +49,8 @@ alias ls='ls -G'
 alias ll='ls -lahG'
 alias la='ls -aG'
 alias l='ls -1G'
+alias pmkdir='mkdir -p'
+
 
 # jump to dir
 alias gitz="cd $HOME/Documents/gitz"
@@ -67,6 +73,8 @@ alias grao='git remote add origin'
 alias gbranch='git branch'
 alias gcheck='git checkout'
 alias gmerge='git merge'
+alias glog='git log'
+alias greset='git reset'
 
 #use brew vim
 alias vim='/usr/local/bin/vim'
