@@ -43,8 +43,8 @@ cmess(){
 	#git push origin master
 	#popd
 #}
-alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && cmess && git commit -a -m \"$(echo "changed files $(gs -s | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')")\" --status  && git push origin master && popd"
 
+alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && cmess && git commit -a -m \"$(echo "changed files $(gs -s | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')")\" --status  && git push origin master && popd"
 alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
 
 # dev
