@@ -29,7 +29,7 @@ alias vs='echo "volume: $VOL"'
 
 # dotfiles
 cmess(){  
-	export cmessage=`echo "changed files $(gs -s |cut -d ' ' -f 3 | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
+	export cmessage=`echo "changed files $(gs -s | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
 }
 #dotgather(){
 	#export cmessage=`echo "changed files $(gs -s |cut -d ' ' -f 3 | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
