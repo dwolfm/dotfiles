@@ -134,4 +134,3 @@ let g:UltiSnipsEditSplit=" vertical"
 if has('mouse')		   " if there is a mouse avalible allow it
   set mouse=a
 endif
-
