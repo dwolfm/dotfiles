@@ -29,11 +29,7 @@ alias vs='echo "volume: $VOL"'
 
 # dotfiles
 cmess(){  
-	pushd $pwd
-	cd "$HOME/gitz/dotfiles"
 	export cmessage=`echo "changed files $(gs -s |cut -d ' ' -f 3 | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
-	echo $txtgrn "$cmessage"
-	popd
 }
 #dotgather(){
 	#export cmessage=`echo "changed files $(gs -s |cut -d ' ' -f 3 | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
@@ -46,7 +42,7 @@ cmess(){
 	#git push origin master
 	#popd
 #}
-alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && cmess && git commit -a -m "\"$cmessage\""  && git push origin master && popd"
+alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && cmess && git commit -a -m 'changed' --status  && git push origin master && popd"
 
 alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
 

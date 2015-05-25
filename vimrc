@@ -1,4 +1,3 @@
-" lul test 
 " setup vundle
 set nocompatible              " be iMproved, required
 filetype off                  " required
