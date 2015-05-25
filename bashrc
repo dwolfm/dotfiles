@@ -27,9 +27,25 @@ alias vm='VOL=7 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
 alias vs='echo "volume: $VOL"'
 
 # dotfiles
-alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && git commit -a -m \"$(echo "changed files $(gs -s | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')")\" --status  && git push origin master && popd"
+cmess(){  
+	export cmessage=`echo "changed files $(gs -s | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
+	echo $txtgrn $cmessage
+	echo $txtwht
+}
+#dotgather(){
+	#export cmessage=`echo "changed files $(gs -s |cut -d ' ' -f 3 | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
+	#echo $txtgrn "$cmessage"
+	#pushd $PWD
+	#cd "$HOME/gitz/dotfiles"
+	#make gather
+	#git add -A
+	#git commit -a -m "$cmessage"
+	#git push origin master
+	#popd
+#}
+alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && cmess && git commit -a -m \"$(echo "changed files $(gs -s | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')")\" --status  && git push origin master && popd"
+
 alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
-alias dotpull="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && git pull origin master && popd"
 
 # dev
 alias pgup="postgres -D $HOME/.postgres"
