@@ -86,10 +86,14 @@ noremap H ^
 noremap L $
 
 " switch windows with leader hjlk
-map <leader>h <C-W>h
-map <leader>j <C-W>j
-map <leader>k <C-W>k
-map <leader>l <C-W>l
+map wv <C-w>v
+map wh <C-w>h
+map ww <C-w>w
+map wh <C-W>h
+map wj <C-W>j
+map wk <C-W>k
+map wl <C-W>l
+map wq :q<CR>
 
 " get wordcound
 noremap <leader>wc :!wc -w %<CR>
