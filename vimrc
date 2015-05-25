@@ -95,6 +95,7 @@ map wk <C-W>k
 map wl <C-W>l
 map wq :q<CR>
 
+
 " get wordcound
 noremap <leader>wc :!wc -w %<CR>
 " syntastic cheack
