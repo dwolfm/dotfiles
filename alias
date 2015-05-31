@@ -18,7 +18,7 @@ alias vm='VOL=100 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
 alias vk='VOL=0 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
 alias vs='echo "volume: $VOL"'
 
-alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && git commit -a -m \"changed files: $(git status -s)\" --status  && git push origin master && popd"
+alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && git commit -a -m \"changed files: $(git status )\" --status  && git push origin master && popd"
 alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
 
 # dev
