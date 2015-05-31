@@ -6,9 +6,11 @@ gather:
 	cp -f ${HOME}/.gitconfig $(DOTFILES)/gitconfig
 	cp -f ${HOME}/.tmux.conf $(DOTFILES)/tmux.conf
 	cp -f ${HOME}/.tern-project $(DOTFILES)/tern-project
-	cp -rf ${HOME}/.bash/* $(DOTFILES)/bash/
+	cp -rf ${HOME}/.sh/* $(DOTFILES)/sh/
 	cp -rf $(HOME)/.psqlrc $(DOTFILES)/psqlrc
 	cp -rf  $(HOME)/Library/Preferences/com.googlecode.iterm2.plist $(DOTFILES)/preferences/
+	cp -rf $(HOME)/.alias $(DOTFILES)/alias
+	cp -rf $(HOME)/.zshrc $(DOTFILES)/zshrc
 
 plant:
 	rm -rf $(DOTFILES)/bak/*
@@ -17,10 +19,12 @@ plant:
 	cp -f ${HOME}/.gitconfig $(DOTFILES)/bak/gitconfig.bak
 	cp -f ${HOME}/.tmux.conf $(DOTFILES)/bak/tmux.conf.bak
 	cp -f ${HOME}/.tern-project $(DOTFILES)/bak/tern-project.bak
+	cp -f $(HOME)/.alias $(DOTFILES)/bak/alias
 	cp -rf $(HOME)/.psqlrc $(DOTFILES)/bak/psqlrc
-	rm -rf $(DOTFILES)/bak/bash.bak/*
-	mkdir $(DOTFILES)/bak/bash.bak
-	cp -rf ${HOME}/.bash/* $(DOTFILES)/bak/bash.bak/
+	cp -rf $(HOME)/.zshrc $(DOTFILES)/bak/zshrc
+	rm -rf $(DOTFILES)/bak/sh.bak/*
+	mkdir $(DOTFILES)/bak/sh.bak
+	cp -rf ${HOME}/.sh/* $(DOTFILES)/bak/sh.bak/
 	mkdir $(DOTFILES)/bak/preferences
 	cp -rf  $(HOME)/Library/Preferences/com.googlecode.iterm2.plist $(DOTFILES)/bak/preferences/
 	cp -f $(DOTFILES)/bashrc ${HOME}/.bashrc 
@@ -28,6 +32,8 @@ plant:
 	cp -f $(DOTFILES)/gitconfig ${HOME}/.gitconfig 
 	cp -f $(DOTFILES)/tmux.conf ${HOME}/.tmux.conf 
 	cp -f $(DOTFILES)/tern-project ${HOME}/.tern-project 
-	cp -rf $(DOTFILES)/bash/* ${HOME}/.bash/ 
+	cp -rf $(DOTFILES)/sh/* ${HOME}/.sh/ 
 	cp -r $(DOTFILES)/psqlrc $(HOME)/.psqlrc
 	cp -rf $(DOTFILES)/preferences/* $(HOME)/Library/Preferences/ 
+	cp -rf $(DOTFILES)/alias $(HOME)/.alias 
+	cp -rf $(DOTFILES)/zshrc $(HOME)/.zshrc

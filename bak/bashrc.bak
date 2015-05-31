@@ -1,4 +1,3 @@
-#testing cmess
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
 
@@ -28,10 +27,7 @@ alias vm='VOL=7 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
 alias vs='echo "volume: $VOL"'
 
 # dotfiles
-cmess(){  
-	export cmessage=`echo "changed files $(gs -s |cut -d ' ' -f 3 | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
-}
-alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && cmess && git commit -a -m $(echo "\"$cmessage\"")  && git push origin master && popd"
+alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A && git commit -a -m 'nother update' && git push origin master && popd"
 alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
 
 # dev
@@ -49,8 +45,6 @@ alias ls='ls -G'
 alias ll='ls -lahG'
 alias la='ls -aG'
 alias l='ls -1G'
-alias pmkdir='mkdir -p'
-
 
 # jump to dir
 alias gitz="cd $HOME/Documents/gitz"
@@ -65,16 +59,17 @@ export GBRANCH=`echo "$git_branch" | cut -d "(" -f2 | cut -d ")" -f1`
 alias gc='git commit -a -m'
 alias gpush='git push origin'
 alias gpull='git pull origin'
-alias gbpush='gpush $GBRANCH'
-alias gbpull='gpull $GBRANCH'
 alias gs='git status'
 alias ga='git add -A'
 alias grao='git remote add origin'
+alias grso='get remote set-url origin'
 alias gbranch='git branch'
 alias gcheck='git checkout'
 alias gmerge='git merge'
-alias glog='git log'
-alias greset='git reset'
+alias gmergetool='git mergetool'
+alias gmv='git mv'
+alias grm='git rm'
+export GIT_EXTERNAL_DIFF="$HOME/.bash/bin/git_diff_wrapper.sh"
 
 #use brew vim
 alias vim='/usr/local/bin/vim'
@@ -90,3 +85,6 @@ export PATH=$HOME/.node/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

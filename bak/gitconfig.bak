@@ -1,3 +1,18 @@
 [user]
-	name = Duncan Marsh
+	name = dwolfm
 	email = dwolfm@gmail.com
+[credential]
+	helper = osxkeychain
+[diff]
+	tool = vimdiff
+[difftool "vimdiff"]
+	path = "/usr/local/bin/vim -b  "
+[merge]
+	tool = vimdiff
+[mergetool "vimdiff"]
+	path = /Users/drwizzard/.bash/bin/git_diff_wrapper.sh
+	trustExitCode = false
+[mergetool]
+	keepBackup = false
+[mergetool "diffconflicts"]
+	trustExitCode = =
