@@ -1,4 +1,4 @@
-" setup vundle
+" SEtup vundle
 set nocompatible              " be iMproved, required
 filetype off                  " required
 " set the runtime path to include Vundle and initialize
@@ -20,13 +20,13 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " y not type less
 Plugin 'SirVer/ultisnips'
+Plugin 'ervandew/supertab'
+Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'int3/vim-taglist-plus'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'honza/vim-snippets'
-Plugin 'garbas/vim-snipmate'
 Plugin 'scrooloose/syntastic'
 
 " better syntax
@@ -116,10 +116,6 @@ let g:airline#extensions#branch#enabled = 1
 " vim moce setup
 let g:move_key_modifier = 'C'
 
-" Snipmate
-nnoremap <silent> <leader>\ <esc>a<Plug>snipMateNextOrTrigger
-smap <silent> <leader>\ <Plug>snipMateNextOrTrigger
-
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive',     
                           \ 'active_filetypes': [],     
@@ -130,8 +126,12 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
 let g:syntastic_auto_loc_list = 1
 
+" supertab
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+
 " Utilisnips
-let g:UltiSnipsExpandTrigger="<tab>"        " Trigger snippets with TAB
+let g:UltiSnipsExpandTrigger="<c-j>"        " Trigger snippets with TAB
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit=" vertical"
