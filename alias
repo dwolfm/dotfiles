@@ -18,14 +18,7 @@ alias vm='VOL=100 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
 alias vk='VOL=0 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
 alias vs='echo "volume: $VOL"'
 
-#dot files
-cmess(){  
-	export cmessage=`echo "changed files $(gs -s | tr '\n' ',' |sed 's/,/, /g' | sed 's/..$//')"`;
-	echo $txtgrn $cmessage
-	echo $txtwht
-}
-
-alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && cmess && git commit -a -m \"$(echo $cmessage)\" --status  && git push origin master && popd"
+alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && git commit -a -m \"changed files: $(git status -s)\" --status  && git push origin master && popd"
 alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
 
 # dev
