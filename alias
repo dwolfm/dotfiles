@@ -31,6 +31,8 @@ alias rtrc="tmux source-file $HOME/.tmux.conf"
 alias md='mkdir -p'
 alias psg='ps -opid,command |grep '
 
+function cless()
+	colorize $1| less;
 # usefull navigation and location aliases
 alias pu='pushd'
 alias po='popd'
