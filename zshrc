@@ -1,42 +1,43 @@
+# dwolfm ZSH CONF
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/drwizzard/.oh-my-zsh
-
-# Set name of the oh-my-zsh theme to load.
-ZSH_THEME="mrtazz"
-
-CASE_SENSITIVE="true"
-
-# Add wisely, as too many plugins slow down shell startup.
-#plugins=(git)
-plugins=(colorize)
-
-# User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
-
 source $ZSH/oh-my-zsh.sh
 source $HOME/.alias
+
+export NODE_PATH=$HOME/.node/lib/node_modules                           # set node modules path
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin" # set system exec path
+export PATH=$PATH:$HOME/.node/bin:$HOME/.sh/nacnud/bin/:$HOME/.sh/bin   # set node / my exec path
+export LSCOLORS=gxfxcxdxcxegedabagacad                                  # change default ls colors
+
+# set globals  
 PS1='%{$fg_bold[red]%}%m%{$reset_color%}:%{$fg[cyan]%}%c%{$reset_color%}:%{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}% %# '
-RPROMPT=''
+ZSH_THEME="mrtazz"
+CASE_SENSITIVE="true"
+export EDITOR='/usr/local/bin/vim'
 
-export NODE_PATH=$HOME/.node/lib/node_modules
-export PATH=$HOME/.node/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.sh/nacnud/bin/:$HOME/.sh/bin
+# load oh-my-zsh plugins
+plugins=(colorize)
 
-# why work outside tmux
-tmux -2
+#set zsh options 
+setopt no_rm_star_silent # turn off delete file warning
+unsetopt share_history   # disable share history between sessions
+setopt no_share_history  # disable share history between sessions
 
-# set vim mode key bindings
-bindkey -v
-bindkey -M viins 'ii' vi-cmd-mode 			# set ii to escape mode
-bindkey "^W" backward-kill-word 
-bindkey -a "^W" backward-kill-word 
-bindkey "^H" backward-delete-char      # Control-h also deletes the previous char
-bindkey "^U" backward-kill-line 
-bindkey -a "^U" backward-kill-line 
-bindkey "^?" backward-delete-char
-bindkey -a 'L' vi-end-of-line
-bindkey -a 'H' vi-beginning-of-line
-bindkey '^a' vi-beginning-of-line
-bindkey '^e' vi-end-of-line
+# configrue zle
+bindkey -v                           # enable vim mode
+bindkey -M viins 'ii' vi-cmd-mode    # map ii to escape key
+bindkey "^W" backward-kill-word      # ctl-w delete word backward insert mode
+bindkey -a "^W" backward-kill-word   # ctl-w delete word backward normal mode
+bindkey "^H" backward-delete-char    # Control-h also deletes the previous char
+bindkey "^U" backward-kill-line      # ctl-u delete cur line insert mode
+bindkey -a "^U" backward-kill-line   # ctl-u delete cur line normal mode
+bindkey "^?" backward-delete-char    # delete key to work like normal
+bindkey -a 'L' vi-end-of-line        # shift l jumps to end of line in normal mode
+bindkey -a 'H' vi-beginning-of-line  # shift h jumps to beginning of lin in normal mode
+bindkey '^a' vi-beginning-of-line    # ctl a jumps to beginning of line insert mode
+bindkey -a '^a' vi-beginning-of-line # ctl a jumps to beginning of line normal mode
+bindkey '^e' vi-end-of-line          # cta e jumps to end of line insert mode
+bindkey -a '^e' vi-end-of-line       # cta e jumps to end of line normal mode
 
 # set RPROMPT to vi mode 
 function zle-line-init zle-keymap-select {
@@ -56,3 +57,7 @@ bindkey '\C-x\C-e' edit-command-line
 if [[ "${terminfo[kcbt]}" != "" ]]; then
 	bindkey "${terminfo[kcbt]}" reverse-menu-complete   # [Shift-Tab] - move through the completion menu backwards
 fi
+
+# why work outside tmux
+tmux -2
+

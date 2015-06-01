@@ -1,5 +1,4 @@
 # ailas and functions
-
 # change the volume from the command line
 export VOL=`sudo osascript -e "output volume of (get volume settings)"`
 setVolume(){
@@ -18,8 +17,18 @@ alias vm='VOL=100 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
 alias vk='VOL=0 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
 alias vs='echo "volume: $VOL"'
 
-alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && git commit -a -m \"changed files: $(git status )\" --status  && git push origin master && popd"
-alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
+function dotgather(){
+	pushd $PWD;
+	cd $HOME/Documents/gitz/dotfiles;
+	make gather;
+	git add -A;
+	git commit -a -m "$(git status)" --status;
+	git push origin master;
+	popd;
+}
+
+#alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && git commit -a -m \"changed files: $(git status )\" --status  && git push origin master && popd"
+#alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
 
 # dev
 alias pgup="postgres -D $HOME/.postgres"
@@ -31,8 +40,10 @@ alias rtrc="tmux source-file $HOME/.tmux.conf"
 alias md='mkdir -p'
 alias psg='ps -opid,command |grep '
 
+# syntax highlighted less
 function cless()
 	colorize $1| less;
+
 # usefull navigation and location aliases
 alias pu='pushd'
 alias po='popd'
@@ -48,7 +59,6 @@ alias ddata="cd $HOME/Library/Developer/Xcode/DerivedData"
 
 #use brew vim
 alias vim='/usr/local/bin/vim'
-export EDITOR='/usr/local/bin/vim'
 
 # git commands 
 alias ga='git add -A'
@@ -67,3 +77,5 @@ alias gs='git status'
 alias gstash='git stash'
 alias gspop='git stash pop'
 
+# export vars
+export lht='localhost:3000'
