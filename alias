@@ -18,12 +18,15 @@ alias vk='VOL=0 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
 alias vs='echo "volume: $VOL"'
 
 function dotgather(){
+	commit_message="$(git status | tr '\n' ',' | sed 's/,/, /g')"
+	if [ "$#" -gt 0 ]; then
+		commit_message="$1";
+	fi
 	pushd $PWD;
 	cd $HOME/Documents/gitz/dotfiles;
 	make gather;
 	git add -A;
-	echo $1
-	git commit -a -m "$(git status)" --status;
+	git commit -a -m "$commit_message" --status;
 	git push origin master;
 	popd;
 }
