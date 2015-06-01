@@ -37,7 +37,6 @@ function dotplant(){
 function dotpull(){
 	pushd $PWD 
 	cd $HOME/Documents/gitz/dotfiles
-	git reset --hard HEAD
 	git pull origin master
 	popd
 }
