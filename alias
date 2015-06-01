@@ -27,6 +27,21 @@ function dotgather(){
 	popd;
 }
 
+function dotplant(){
+	pushd $PWD 
+	cd $HOME/Documents/gitz/dotfiles
+	make plant
+	popd
+}
+
+function dotpull(){
+	pushd $PWD 
+	cd $HOME/Documents/gitz/dotfiles
+	git reset --hard HEAD
+	git pull origin master
+	popd
+}
+
 #alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && git commit -a -m \"changed files: $(git status )\" --status  && git push origin master && popd"
 #alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
 
