@@ -95,7 +95,9 @@ map wk <C-W>k
 map wl <C-W>l
 map wq :q<CR>
 
-
+" copy and paste from clipboard 
+map <leader>cp "+y
+map <leader>cv "+p
 " get wordcound
 noremap <leader>wc :!wc -w %<CR>
 " syntastic cheack

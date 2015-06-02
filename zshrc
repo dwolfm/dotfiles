@@ -1,27 +1,46 @@
 # dwolfm ZSH CONF
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/drwizzard/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 source $HOME/.alias
 
+# load oh-my-zsh plugins
+plugins=(git)
+plugins=(colorize)
+source $ZSH/oh-my-zsh.sh
+
+# set globals  
+PS1='%{$fg_bold[red]%}%m%{$reset_color%}:%{$fg[cyan]%}%c%{$reset_color%}:%{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}% %# '
+CASE_SENSITIVE="true"                                                   # dont let me cheat
+export EDITOR='/usr/local/bin/vim'                                      # use newest vim
+ZSH_THEME="mrtazz"                                                      # good starter
 export NODE_PATH=$HOME/.node/lib/node_modules                           # set node modules path
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin" # set system exec path
 export PATH=$PATH:$HOME/.node/bin:$HOME/.sh/nacnud/bin/:$HOME/.sh/bin   # set node / my exec path
 export LSCOLORS=gxfxcxdxcxegedabagacad                                  # change default ls colors
 
-# set globals  
-PS1='%{$fg_bold[red]%}%m%{$reset_color%}:%{$fg[cyan]%}%c%{$reset_color%}:%{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}% %# '
-ZSH_THEME="mrtazz"
-CASE_SENSITIVE="true"
-export EDITOR='/usr/local/bin/vim'
+# set pushd options
+setopt auto_pushd # mk cd push old dir on dirstack
+setopt pushd_ignore_dups # no dup in dirstack
+setopt pushd_silent # no printing dirstack after pushd or popd
 
-# load oh-my-zsh plugins
-plugins=(colorize)
+# set zsh history options
+HISTFILE=~/.zsh_history
+HISTSIZE=1024                  # big history
+SAVEHIST=1024                  # big history
+setopt no_share_history        # disable share history between sessions
+setopt history_ignore_all_dups # no duplicates in history
+setopt append_history          # append to history
+setopt inc_append_history      # add commands to hist as you enter them
+setopt bang_hist               # !keyword
 
 #set zsh options 
-setopt no_rm_star_silent # turn off delete file warning
-unsetopt share_history   # disable share history between sessions
-setopt no_share_history  # disable share history between sessions
+setopt extended_glob    # activate complex globbbbbbing
+setopt glob_dots        # include dotfiles in globing
+setopt print_exit_value # print exit value if not 0
+setopt no_clobber       # let me overwrite files
+setopt rm_star_silent   # dont ask me if i want to delete
+setopt cd_auto          # if cmd is path cd into it
+setopt chase_links      # resolve symlinks
 
 # configrue zle
 bindkey -v                           # enable vim mode
@@ -38,12 +57,16 @@ bindkey '^a' vi-beginning-of-line    # ctl a jumps to beginning of line insert m
 bindkey -a '^a' vi-beginning-of-line # ctl a jumps to beginning of line normal mode
 bindkey '^e' vi-end-of-line          # cta e jumps to end of line insert mode
 bindkey -a '^e' vi-end-of-line       # cta e jumps to end of line normal mode
+bindkey '^r' history-incremental-pattern-search-backward
 
 # set RPROMPT to vi mode 
+vim_ins_mode="%{$fg_bold[green]%}-- INSERT --%{$reset_color%}%"
+vim_nrm_mode="%{$fg_bold[red]%}-- NORMAL --%{$reset_color%}%"
+
 function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
-    zle reset-prompt
+RPS1="${${KEYMAP/vicmd/$vim_nrm_mode}/(main|viins)/$vim_ins_mode}"
+		RPS2=$RPS1
+		zle reset-prompt
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
