@@ -43,7 +43,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'matze/vim-move' 
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'godlygeek/tabular'
-
+Plugin 'christoomey/vim-tmux-navigator'
 " version vontrol 
 Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-fugitive'
@@ -87,12 +87,15 @@ noremap L $
 
 " switch windows with leader hjlk
 map wv <C-w>v
+map ws <C-w>s
 map wh <C-w>h
 map ww <C-w>w
-map wh <C-W>h
-map wj <C-W>j
-map wk <C-W>k
-map wl <C-W>l
+map wh <C-w>h
+map wj <C-w>j
+map wk <C-w>k
+map wl <C-w>l
+map <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
 map wq :q<CR>
 
 " copy and paste from clipboard 
