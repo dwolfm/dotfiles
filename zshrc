@@ -28,7 +28,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1024                  # big history
 SAVEHIST=1024                  # big history
 setopt no_share_history        # disable share history between sessions
-setopt history_ignore_all_dups # no duplicates in history
 setopt append_history          # append to history
 setopt inc_append_history      # add commands to hist as you enter them
 setopt bang_hist               # !keyword
@@ -39,7 +38,6 @@ setopt glob_dots        # include dotfiles in globing
 setopt print_exit_value # print exit value if not 0
 setopt no_clobber       # let me overwrite files
 setopt rm_star_silent   # dont ask me if i want to delete
-setopt cd_auto          # if cmd is path cd into it
 setopt chase_links      # resolve symlinks
 
 # configrue zle

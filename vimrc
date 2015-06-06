@@ -40,10 +40,10 @@ Plugin 'git://git.wincent.com/command-t.git'
 
 " handy tools
 Plugin 'sjl/gundo.vim' 
-Plugin 'matze/vim-move' 
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'godlygeek/tabular'
 Plugin 'christoomey/vim-tmux-navigator'
+
 " version vontrol 
 Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-fugitive'
@@ -88,38 +88,42 @@ noremap L $
 " switch windows with leader hjlk
 map wv <C-w>v
 map ws <C-w>s
-map wh <C-w>h
-map ww <C-w>w
-map wh <C-w>h
-map wj <C-w>j
-map wk <C-w>k
-map wl <C-w>l
 map <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
 map wq :q<CR>
 
+" auto jump to end of line you pasted
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
 " copy and paste from clipboard 
-map <leader>cp "+y
-map <leader>cv "+p
+map <leader>y "+y
+map <leader>p "+p
+
+" move lines up and down
+nnoremap mj :m .+1<CR>
+nnoremap mk :m .-2<CR>
+vnoremap mj :m +2<CR>
+vnoremap mk :m -2<CR>
+
+
 " get wordcound
 noremap <leader>wc :!wc -w %<CR>
 " syntastic cheack
-nnoremap <silent> <leader>s :SyntasticCheck<CR>
+"nnoremap <silent> <leader>s :SyntasticCheck<CR>
 " open nerdtree
 nnoremap <silent> <leader>t :TlistToggle<CR>
 " open gundo
 nnoremap <silent> <leader>u :GundoToggle<CR>
 " open ctl-p
-nnoremap <silent> <leader>p :CtrlP<CR>
+nnoremap <silent> <leader>s :CtrlP<CR>
 
 " Vim-Airline
 let g:airline_theme = 'jellybeans'          " Set theme
 let g:airline_powerline_fonts = 1           " Use powerline fonts for
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
-
-" vim moce setup
-let g:move_key_modifier = 'C'
 
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive',     
