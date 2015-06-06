@@ -57,6 +57,7 @@ alias rbrc="source $HOME/.bashrc"
 alias rtrc="tmux source-file $HOME/.tmux.conf"
 alias md='mkdir -p'
 alias psg='ps -opid,command |grep '
+alias view='vim -u ~/.viewrc -c ":noremap q :q<cr>" -c ":map : <Esc>" -c ":set nomodifiable"'
 
 # syntax highlighted less
 function cless()

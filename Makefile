@@ -17,7 +17,7 @@ plant:
 	rm -rf $(DOTFILES)/bak/*
 	cp -f ${HOME}/.bashrc $(DOTFILES)/bak/bashrc.bak
 	cp -f ${HOME}/.vimrc $(DOTFILES)/bak/vimrc.bak
-	cp -f ${HOME}/.viewrc $(DOTFILES)/bak/vimrc.bak
+	cp -f ${HOME}/.viewrc $(DOTFILES)/bak/viewrc.bak
 	cp -f ${HOME}/.gitconfig $(DOTFILES)/bak/gitconfig.bak
 	cp -f ${HOME}/.tmux.conf $(DOTFILES)/bak/tmux.conf.bak
 	cp -f ${HOME}/.tern-project $(DOTFILES)/bak/tern-project.bak
@@ -31,7 +31,7 @@ plant:
 	cp -rf  $(HOME)/Library/Preferences/com.googlecode.iterm2.plist $(DOTFILES)/bak/preferences/
 	cp -f $(DOTFILES)/bashrc ${HOME}/.bashrc 
 	cp -f $(DOTFILES)/vimrc ${HOME}/.vimrc 
-	cp -f $(DOTFILES)/viewrc ${HOME}/.vimrc 
+	cp -f $(DOTFILES)/viewrc ${HOME}/.viewrc
 	cp -f $(DOTFILES)/gitconfig ${HOME}/.gitconfig 
 	cp -f $(DOTFILES)/tmux.conf ${HOME}/.tmux.conf 
 	cp -f $(DOTFILES)/tern-project ${HOME}/.tern-project 

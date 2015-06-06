@@ -38,3 +38,5 @@ map k <C-Y>
 map K <C-u>
 map j <C-E>
 map J <C-d>
+nnoremap <Space> <C-d>
+nnoremap <S-Space> <C-u>
