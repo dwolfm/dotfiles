@@ -34,9 +34,9 @@ if has('mouse')		   " if there is a mouse avalible allow it
   set mouse=a
 endif
 
-map K <C-Y> 
-map u <C-u>
-map J <C-E>
-map d <C-d>
+map k <C-Y> 
+map K <C-u>
+map j <C-E>
+map J <C-d>
 nnoremap <Space> <C-d>
 nnoremap <S-Space> <C-u>
