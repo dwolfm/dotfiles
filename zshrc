@@ -13,8 +13,11 @@ PS1='%{$fg_bold[red]%}%m%{$reset_color%}:%{$fg[cyan]%}%c%{$reset_color%}:%{$fg_b
 CASE_SENSITIVE="true"                                                   # dont let me cheat
 export EDITOR='/usr/local/bin/vim'                                      # use newest vim
 ZSH_THEME="mrtazz"                                                      # good starter
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/.go/packages
 export NODE_PATH=$HOME/.node/lib/node_modules                           # set node modules path
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin" # set system exec path
+export PATH=$GOROOT/bin:$GOPATH/bin:$HOME/.go/bin:$PATH
 export PATH=$PATH:$HOME/.node/bin:$HOME/.sh/nacnud/bin/:$HOME/.sh/bin   # set node / my exec path
 export LSCOLORS=gxfxcxdxcxegedabagacad                                  # change default ls colors
 
