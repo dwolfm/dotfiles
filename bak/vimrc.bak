@@ -43,6 +43,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'matze/vim-move' 
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'godlygeek/tabular'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " version vontrol 
 Plugin 'tpope/vim-rhubarb'

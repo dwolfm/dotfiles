@@ -58,6 +58,7 @@ alias rtrc="tmux source-file $HOME/.tmux.conf"
 alias md='mkdir -p'
 alias psg='ps -opid,command |grep '
 alias view='vim -u ~/.viewrc -c ":noremap q :q<cr>" -c ":map : <Esc>" -c ":set nomodifiable"'
+alias emptytrash="sudo rm -rf $HOME/.Trash/*"
 
 # syntax highlighted less
 function cless()
