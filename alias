@@ -58,7 +58,10 @@ alias rtrc="tmux source-file $HOME/.tmux.conf"
 alias md='mkdir -p'
 alias psg='ps -opid,command |grep '
 alias view='vim -u ~/.viewrc -c ":noremap q :q<cr>" -c ":map : <Esc>" -c ":set nomodifiable"'
+alias e='echo -e '
 alias emptytrash="sudo rm -rf $HOME/.Trash/*"
+alias n='ncmpcpp'
+alias soundout='sox -t raw -b 16 -r 44100 -c 2 -e unsigned-integer - -t coreaudio'
 
 # syntax highlighted less
 function cless()
