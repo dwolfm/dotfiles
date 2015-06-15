@@ -59,7 +59,7 @@ setopt bang_hist               # !keyword
 #set zsh options 
 setopt extended_glob    # activate complex globbbbbbing
 setopt glob_dots        # include dotfiles in globing
-setopt print_exit_value # print exit value if not 0
+#setopt print_exit_value # print exit value if not 0
 setopt no_clobber       # let me overwrite files
 setopt rm_star_silent   # dont ask me if i want to delete
 setopt chase_links      # resolve symlinks
