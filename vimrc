@@ -31,6 +31,7 @@ Plugin 'scrooloose/syntastic'
 
 " better syntax
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'mxw/vim-jsx'
 
 " file nav
 Plugin 'kien/ctrlp.vim'   

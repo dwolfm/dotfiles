@@ -61,6 +61,7 @@ alias view='vim -u ~/.viewrc -c ":noremap q :q<cr>" -c ":map : <Esc>" -c ":set n
 alias e='echo -e '
 alias emptytrash="sudo rm -rf $HOME/.Trash/*"
 alias n='ncmpcpp'
+alias c='cat'
 alias soundout='sox -t raw -b 16 -r 44100 -c 2 -e unsigned-integer - -t coreaudio'
 
 # syntax highlighted less

@@ -3,3 +3,17 @@
 	email = dwolfm@gmail.com
 [credential]
 	helper = osxkeychain
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = true 
+[alias]
+	d = difftool
+[merge]
+	tool = vimdiff3
+[mergetool]
+	prompt = true 
+[alias]
+	d = difftool
+[mergetool "vimdiff3"]
+	cmd = vim -f -d \"$LOCAL\" \"$REMOTE\"
