@@ -13,6 +13,7 @@
 	tool = vimdiff3
 [mergetool]
 	prompt = true 
+	keepBackup = false
 [alias]
 	d = difftool
 [mergetool "vimdiff3"]
