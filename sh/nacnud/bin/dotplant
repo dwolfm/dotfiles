@@ -1,0 +1,5 @@
+#!/bin/bash
+pushd $PWD 
+cd $HOME/Documents/gitz/dotfiles
+make plant
+popd

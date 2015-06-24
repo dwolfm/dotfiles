@@ -1,0 +1,5 @@
+#!/bin/bash
+pushd $PWD 
+cd $HOME/Documents/gitz/dotfiles
+git pull origin master
+popd

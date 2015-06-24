@@ -35,7 +35,6 @@ Plugin 'mxw/vim-jsx'
 
 " file nav
 Plugin 'kien/ctrlp.vim'   
-Plugin 'scrooloose/nerdtree'  
 Plugin 'bling/vim-bufferline'
 Plugin 'git://git.wincent.com/command-t.git'
 
@@ -58,6 +57,7 @@ filetype plugin indent on    " required
 set backspace=2           " make backspace work like all other apps
 set number                " turn on the line numbers
 set incsearch             " vim starts searching while typing search string
+set expandtab
 set tabstop=2             " tabset three spaces
 set shiftwidth=2          " tabset three space
 set ff=mac                " set file format to mac
@@ -110,6 +110,7 @@ nnoremap <silent> <leader>t :TlistToggle<CR>
 nnoremap <silent> <leader>u :GundoToggle<CR>
 " open ctl-p
 nnoremap <silent> <leader>p :CtrlP<CR>
+" 
 
 " Vim-Airline
 let g:airline_theme = 'jellybeans'          " Set theme

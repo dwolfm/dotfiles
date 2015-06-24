@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ $# -ne 1 ]; then  
+  echo 'FATAL ERRR: must feed me commit message';
+  exit -1;
+fi
+pushd $PWD;
+cd $HOME/Documents/gitz/dotfiles;
+make gather;
+git add -A;
+git commit -a -m $1 --status;
+git push origin master;
+popd;

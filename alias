@@ -1,90 +1,41 @@
-# ailas and functions
-# change the volume from the command line
-export VOL=`sudo osascript -e "output volume of (get volume settings)"`
-setVolume(){
-	if [ $# -eq 0 ]; then
-		VOL=`sudo osascript -e "output volume of (get volume settings)"`
-	else
-		VOL=$1
-	fi
-	sudo osascript -e "set volume output volume $VOL"
-	echo "volume: $VOL"
-}
-alias v=setVolume
-alias vu='VOL=`expr $VOL + 10` && sudo osascript -e "set volume output volume $VOL" && echo "volume: $VOL"'
-alias vd='VOL=`expr $VOL - 10` && sudo osascript -e "set volume output volume $VOL" && echo "volume: $VOL"'
-alias vm='VOL=100 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
-alias vk='VOL=0 && sudo osascript -e "set Volume $VOL" && echo "volume: $VOL"'
-alias vs='echo "volume: $VOL"'
-
-function dotgather(){
-	commit_message="$(git status | tr '\n' ',' | sed 's/,/, /g')"
-	if [ "$#" -gt 0 ]; then
-		commit_message="$1";
-	fi
-	pushd $PWD;
-	cd $HOME/Documents/gitz/dotfiles;
-	make gather;
-	git add -A;
-	git commit -a -m "$commit_message" --status;
-	git push origin master;
-	popd;
-}
-
-function dotplant(){
-	pushd $PWD 
-	cd $HOME/Documents/gitz/dotfiles
-	make plant
-	popd
-}
-
-function dotpull(){
-	pushd $PWD 
-	cd $HOME/Documents/gitz/dotfiles
-	git pull origin master
-	popd
-}
-
-#alias dotgather="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make gather && git add -A  && git commit -a -m \"changed files: $(git status )\" --status  && git push origin master && popd"
-#alias dotplant="pushd $PWD && cd $HOME/Documents/gitz/dotfiles && make plant && popd"
+# reload conf
+alias rbrc="source $HOME/.bashrc"
+alias rzsrc="source $HOME/.zshrc"
+alias ral="source $HOME/.alias"
+alias rtrc="tmux source-file $HOME/.tmux.conf"
 
 # dev
 alias pgup="postgres -D $HOME/.postgres"
 alias pgdown="killall postgres"
 alias ddatadump="rm -rf $HOME/Library/Developer/Xcode/DerivedData/*"
-alias vis="vim -S Session.vim"
-alias rbrc="source $HOME/.bashrc"
-alias rtrc="tmux source-file $HOME/.tmux.conf"
-alias md='mkdir -p'
-alias psg='ps -opid,command |grep '
-alias view='vim -u ~/.viewrc -c ":noremap q :q<cr>" -c ":map : <Esc>" -c ":set nomodifiable"'
-alias e='echo -e '
-alias emptytrash="sudo rm -rf $HOME/.Trash/*"
+alias soxpipe='sox -t raw -b 16 -r 44100 -c 2 -e unsigned-integer - -t coreaudio'
+
+# shorthand
 alias n='ncmpcpp'
 alias c='cat'
-alias soundout='sox -t raw -b 16 -r 44100 -c 2 -e unsigned-integer - -t coreaudio'
-
-# syntax highlighted less
-function cless()
-	colorize $1| less;
+alias e='echo -e '
+alias md='mkdir -p'
+alias psg='ps -opid,command |grep '
+alias emptytrash="sudo rm -rf $HOME/.Trash/*"
+alias view='vim -u ~/.viewrc -c ":noremap q :q<cr>" -c ":map : <Esc>" -c ":set nomodifiable"'
 
 # usefull navigation and location aliases
 alias pu='pushd'
 alias po='popd'
 alias ..='cd ..'
 alias ls='ls -G'
-alias ll='ls -lahG'
+alias ll='ls -lhG'
+alias lal='ls -lahG'
 alias la='ls -aG'
 alias l='ls -1G'
+alias tree='tree -C'
 
 # jump to dir
 alias gitz="cd $HOME/Documents/gitz"
+alias buildz="cd $HOME/Documents/buildz"
 alias ddata="cd $HOME/Library/Developer/Xcode/DerivedData"
 
-#use brew vim
-alias vim='/usr/local/bin/vim'
-
-# git commands 
+# git shorthand
 alias ga='git add -A'
 alias gbranch='git branch'
 alias gc='git commit -a -m'
@@ -100,6 +51,7 @@ alias gl='git pull origin'
 alias gs='git status'
 alias gstash='git stash'
 alias gspop='git stash pop'
+alias greset='git reset'
 
 # export vars
 export lht='localhost:3000'

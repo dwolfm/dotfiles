@@ -1,6 +1,6 @@
 # dwolfm ZSH CONF
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/drwizzard/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 source $HOME/.alias
 
 # setup zsh-complettions
@@ -14,20 +14,20 @@ plugins=(zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # config zsh highlight colors
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor root line)
-ZSH_HIGHLIGHT_STYLES[command]=none
-ZSH_HIGHLIGHT_STYLES[builtin]=none
-ZSH_HIGHLIGHT_STYLES[function]=none
-ZSH_HIGHLIGHT_STYLES[alias]=none
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=red
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=red
-ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=cyan
-ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=cyan
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=fg=magenta
-ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=blue 
-ZSH_HIGHLIGHT_STYLES[path]=fg=cyan
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=yellow
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=yellow
+#ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor root line)
+#ZSH_HIGHLIGHT_STYLES[command]=none
+#ZSH_HIGHLIGHT_STYLES[builtin]=none
+#ZSH_HIGHLIGHT_STYLES[function]=none
+#ZSH_HIGHLIGHT_STYLES[alias]=none
+#ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=red
+#ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=red
+#ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=cyan
+#ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=cyan
+#ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=fg=magenta
+#ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=blue 
+#ZSH_HIGHLIGHT_STYLES[path]=fg=cyan
+#ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=yellow
+#ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=yellow
 
 # set globals  
 PS1='%{$fg_bold[red]%}%m%{$reset_color%}:%{$fg[cyan]%}%c%{$reset_color%}:%{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}% %# '
