@@ -18,6 +18,7 @@ alias md='mkdir -p'
 alias psg='ps -opid,command |grep '
 alias emptytrash="sudo rm -rf $HOME/.Trash/*"
 alias view='vim -u ~/.viewrc -c ":noremap q :q<cr>" -c ":map : <Esc>" -c ":set nomodifiable"'
+alias tweet="$HOME/.sh/nacnud/bin/tweet"
 
 # usefull navigation and location aliases
 alias pu='pushd'

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+[ $# -ne 1 ] && echo 'must tweet a message' && exit -1
+echo $1 | tweet read
